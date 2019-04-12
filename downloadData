@@ -1,0 +1,17 @@
+#!/usr/bin/env node
+
+const { nquads } = require('./config.json');
+const shell = require('shelljs');
+
+const urlToSnake = url => url.replace(/:\/\//g, '_').replace('/', '');
+
+nquads.forEach(lodexUrl => {
+    const exportUrl = lodexUrl + 'api/export/nquads';
+    const exportPath = `data/${urlToSnake(lodexUrl)}`;
+
+    console.log(`Getting ${lodexUrl} nquads export...`);
+
+    // Get the export result into a data directory
+    // -c for --continue start download from the beginning again when error
+    shell.exec(`wget -O ${exportPath} -c ${exportUrl}`);
+});
