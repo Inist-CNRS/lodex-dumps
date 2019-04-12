@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const { nquads } = require('./config.json');
+const { nquads, extendednquads, extendednquadscompressed } = require('./config.json');
 const shell = require('shelljs');
 
 const urlToSnake = url => url.replace(/:\/\//g, '_').replace('/', '');
@@ -8,6 +8,28 @@ const urlToSnake = url => url.replace(/:\/\//g, '_').replace('/', '');
 nquads.forEach(lodexUrl => {
     const exportUrl = lodexUrl + 'api/export/nquads';
     const exportPath = `data/${urlToSnake(lodexUrl)}_graph.nq`;
+
+    console.log(`Getting ${lodexUrl} nquads export...`);
+
+    // Get the export result into a data directory
+    // -c for --continue start download from the beginning again when error
+    shell.exec(`wget --local-encoding=UTF-8 -O ${exportPath} -c ${exportUrl}`);
+});
+
+extendednquads.forEach(lodexUrl => {
+    const exportUrl = lodexUrl + 'api/export/extendednquads';
+    const exportPath = `data/${urlToSnake(lodexUrl.replace(/^https?:\/\//, ''))}_notice_graph.nq`;
+
+    console.log(`Getting ${lodexUrl} nquads export...`);
+
+    // Get the export result into a data directory
+    // -c for --continue start download from the beginning again when error
+    shell.exec(`wget --local-encoding=UTF-8 -O ${exportPath} -c ${exportUrl}`);
+});
+
+extendednquadscompressed.forEach(lodexUrl => {
+    const exportUrl = lodexUrl + 'api/export/extendednquadscompressed';
+    const exportPath = `data/${urlToSnake(lodexUrl.replace(/^https?:\/\//, ''))}_notice_graph.nq.gz`;
 
     console.log(`Getting ${lodexUrl} nquads export...`);
 
