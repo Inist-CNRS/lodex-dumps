@@ -1,0 +1,15 @@
+version: '3'
+services:
+    lodex-dumps:
+        container_name: lodex-dumps
+        build:
+            context: .
+            args:
+                - http_proxy
+                - https_proxy
+        image: lodex-dumps:1.0.0
+        environment:
+            - http_proxy
+            - https_proxy
+        ports:
+            - "5000:5000"

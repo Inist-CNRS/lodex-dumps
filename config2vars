@@ -1,0 +1,9 @@
+#!/usr/bin/env node
+
+const { environment } = require('./config.json');
+const shell = Object.keys(environment)
+    .filter(key => typeof environment[key] !== 'object')
+    .map(key => `export ${key}=${JSON.stringify(environment[key])}`)
+    .join('\n');
+
+process.stdout.write(shell);
