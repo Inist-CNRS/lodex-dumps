@@ -1,7 +1,5 @@
 {
     "environment": {
-        "CRON_VERBOSE": true,
-        "EZS_VERBOSE": true,
         "NODE_ENV": "production"
     },
     "nquads": [
