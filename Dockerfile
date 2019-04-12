@@ -18,10 +18,8 @@ COPY downloadData /app
 COPY docker-entrypoint.sh /app
 
 RUN npm init -y
-RUN npm install ezs@9.1.0
 RUN npm install serve@11.0.0
 RUN npm install shelljs
-RUN npm install curl
 
 ENTRYPOINT ["/app/docker-entrypoint.sh"]
 CMD ["--daemon", "/app/data"]
