@@ -7,7 +7,7 @@ const urlToSnake = url => url.replace(/:\/\//g, '_').replace('/', '');
 
 nquads.forEach(lodexUrl => {
     const exportUrl = lodexUrl + 'api/export/nquads';
-    const exportPath = `data/${urlToSnake(lodexUrl)}.nq`;
+    const exportPath = `data/${urlToSnake(lodexUrl)}_graph.nq`;
 
     console.log(`Getting ${lodexUrl} nquads export...`);
 
