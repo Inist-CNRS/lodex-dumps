@@ -1,0 +1,12 @@
+{
+    "headers": [{
+        "source": "*.nq",
+        "headers": [{
+            "key": "Content-disposition",
+            "value": "attachment; filename=export.nq"
+        }, {
+            "key": "Content-Type",
+            "value": "application/n-quads"
+        }]
+    }]
+}

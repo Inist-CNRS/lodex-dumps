@@ -14,6 +14,7 @@ EXPOSE 5000
 COPY data/ /app/data
 COPY config.json /app
 COPY config2vars /app
+COPY serve.json /app
 COPY downloadData /app
 COPY docker-entrypoint.sh /app
 
