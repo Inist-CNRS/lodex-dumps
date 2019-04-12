@@ -8,7 +8,7 @@ chmod 755 /app/config.env
 source /app/config.env
 
 echo "Downloading data..."
-/app/downloadData
+/app/downloadData &
 
 echo "Starting server..."
-exec npx serve data
+exec npx serve -n -c /app/serve.json data
