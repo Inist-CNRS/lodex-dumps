@@ -37,4 +37,4 @@ This software is under [CeCILL license](LICENSE). You can use, modify and/ or re
 
 ## Version
 
-lodex-dumps:1.0.0
+lodex-dumps:2.0.0

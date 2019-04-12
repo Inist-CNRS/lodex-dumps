@@ -1,13 +1,15 @@
 {
     "name": "lodex-dumps",
-    "version": "1.0.0",
+    "version": "2.0.0",
     "description": "An ezmaster application to download LODEX exports and expose them on the web",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/Inist-CNRS/lodex-dumps.git"
     },
     "keywords": [
-        "web", "dumps", "rdf"
+        "web",
+        "dumps",
+        "rdf"
     ],
     "author": "François PARMENTIER <francois.parmentier@gmail.com>",
     "license": "CECILL",
