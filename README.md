@@ -1,6 +1,7 @@
 # lodex-dumps
 
-An ezmaster application to download LODEX exports and expose them on the web
+An [ezmaster](https://github.com/Inist-CNRS/ezmaster) application to download
+LODEX exports and expose them on the web.
 
 ## Settings
 
@@ -16,6 +17,24 @@ To add a simple N-Quads export, add a the URL of the dataset to export to the
 ```
 
 > **Note:**: it's important to let the `/` at the end of the URL.
+
+List of usable exporters:
+
+- `nquads`: N-Quads triples of all resources of a lodex (`.nq`)
+- `extendednquads`: N-Quads containing triples linking lodex resources to ISTEX
+  documents (`.nq`)
+- `extendednquadscompressed`: N-Quads triples linking lodex resources to ISTEX
+  documents, gzipped (`.nq.gz`)
+- `atom`: Syndication feed of a LODEX (`.atom`)
+- `csv`: Comma Separated Values of a lodex (`.csv`)
+- `jsonallvalue`: JSON array of all resources of a lodex (`.json`)
+- `jsonld`: [JSON-LD](https://json-ld.org/) triples of all resources of a lodex
+  (`.json`)
+- `jsonldcompacted`: Compacted JSON-LD triples of all resources of a lodex
+  (`.json`)
+- `tsv`: Tabulation Separated Values of a lodex (`.tsv`)
+- `turtle`: [Turtle](https://en.wikipedia.org/wiki/Turtle_(syntax)) triples of
+  all resources of a lodex (`.ttl`)
 
 ## Contribution
 
@@ -33,7 +52,9 @@ make run-debug
 
 ## License
 
-This software is under [CeCILL license](LICENSE). You can use, modify and/ or redistribute the software under the terms of the CeCILL license.
+This software is under [CeCILL license](LICENSE).
+You can use, modify and/ or redistribute the software under the terms of the
+CeCILL license.
 
 ## Version
 
