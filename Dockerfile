@@ -11,16 +11,17 @@ RUN echo '{ \
 }' > /etc/ezmaster.json
 
 EXPOSE 5000
+RUN npm init -y
+RUN npm install serve
+RUN npm install shelljs
+RUN npm install ramda
+
 COPY data/ /app/data
 COPY config.json /app
 COPY config2vars /app
 COPY serve.json /app
 COPY downloadData /app
 COPY docker-entrypoint.sh /app
-
-RUN npm init -y
-RUN npm install serve@11.0.0
-RUN npm install shelljs
 
 ENTRYPOINT ["/app/docker-entrypoint.sh"]
 CMD ["--daemon", "/app/data"]
