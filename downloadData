@@ -21,7 +21,7 @@ const extensions = {
 const removeProtocol = url => url.replace(/^https?:\/\//, '');
 const removeLastSlash = url => url.replace(/\/$/, '');
 const addData = fileName => `data/${fileName}`;
-const addNotice =  exporter => fileName => exporter.endsWith('extended') ? `${fileName}_notice` : fileName;
+const addNotice =  exporter => fileName => exporter.includes('extended') ? `${fileName}_notice` : fileName;
 const addGraph = exporter => fileName => exporter.includes('nquads') ? `${fileName}_graph` : fileName;
 const addExtension = exporter => fileName => `${fileName}.${extensions[exporter]}`;
 const addGz = exporter => fileName => exporter.endsWith('compressed') ? `${fileName}.gz` : fileName;
