@@ -36,6 +36,8 @@ List of usable exporters:
 - `turtle`: [Turtle](https://en.wikipedia.org/wiki/Turtle_(syntax)) triples of
   all resources of a lodex (`.ttl`)
 
+> **Note**: if the file already exists, it is not downloaded again.
+
 ## Contribution
 
 To build the docker image locally:
@@ -53,7 +55,7 @@ make run-debug
 ## License
 
 This software is under [CeCILL license](LICENSE).
-You can use, modify and/ or redistribute the software under the terms of the
+You can use, modify and/or redistribute the software under the terms of the
 CeCILL license.
 
 ## Version
