@@ -25,8 +25,10 @@ const addGraph = exporter => fileName => exporter.includes('nquads') ? `${fileNa
 const addExtension = exporter => fileName => `${fileName}.${extensions[exporter]}`;
 const addGz = exporter => fileName => exporter.endsWith('compressed') ? `${fileName}.gz` : fileName;
 
+const isSupportedExporter = exporter => Object.keys(extensions).includes(exporter);
+
 exporters
-    .filter(e => e !== 'environment')
+    .filter(isSupportedExporter)
     .forEach(exporter => {
         const createExportPath = pipe(
             removeProtocol,
