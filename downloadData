@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+const fs = require('fs');
 const shell = require('shelljs');
 const { pipe } = require('ramda');
 const config = require('./config.json');
@@ -44,8 +45,11 @@ exporters
             const exportPath = createExportPath(lodexUrl);
             console.log(`Getting ${lodexUrl} ${exporter} export...`);
 
-            // Get the export result into a data directory
-            // -c for --continue start download from the beginning again when error
-            shell.exec(`wget --local-encoding=UTF-8 -O ${exportPath} -c ${exportUrl}`);
+            if (fs.access(exportPath, fs.constants.R_OK, (err) => {
+                if (!err) { return; }
+                // Get the export result into a data directory
+                // -c for --continue start download from the beginning again when error
+                shell.exec(`wget --local-encoding=UTF-8 -O ${exportPath} -c ${exportUrl}`);
+            }));
         });
     });
