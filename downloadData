@@ -52,7 +52,7 @@ exporters
                 if (!err) { return; }
                 // Get the export result into a data directory
                 // -c for --continue start download from the beginning again when error
-                shell.exec(`wget --local-encoding=UTF-8 -O ${exportPath} -c ${exportUrl}`);
+                shell.exec(`wget --local-encoding=UTF-8 --tries=2 -O ${exportPath} -c ${exportUrl}`);
             }));
         });
     });
