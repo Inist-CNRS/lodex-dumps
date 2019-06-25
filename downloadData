@@ -7,13 +7,15 @@ const config = require('./config.json');
 const exporters = Object.keys(config);
 const extensions = {
     'nquads': 'nq',
-    'extendednquads': 'nq',
-    'extendednquadscompressed': 'nq',
+    'extendednquads': 'nq', // For old configuration LODEX
+    'extendednquadscompressed': 'nq', // For old configuration LODEX
+    'extended-nquads': 'nq',
+    'extended-nquads-compressed': 'nq',
     'atom': 'atom',
     'csv': 'csv',
     'jsonallvalue': 'json',
     'jsonld': 'json',
-    'jsonldcompacted': 'json',
+    'jsonldcompacted': 'json', // For old configuration LODEX
     'tsv': 'tsv',
     'turtle': 'ttl'
 }
