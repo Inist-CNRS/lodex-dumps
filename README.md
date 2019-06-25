@@ -21,16 +21,14 @@ To add a simple N-Quads export, add a the URL of the dataset to export to the
 List of usable exporters:
 
 - `nquads`: N-Quads triples of all resources of a lodex (`.nq`)
-- `extendednquads`: N-Quads containing triples linking lodex resources to ISTEX
+- `extended-nquads`: N-Quads containing triples linking lodex resources to ISTEX
   documents (`.nq`)
-- `extendednquadscompressed`: N-Quads triples linking lodex resources to ISTEX
+- `extended-nquads-compressed`: N-Quads triples linking lodex resources to ISTEX
   documents, gzipped (`.nq.gz`)
 - `atom`: Syndication feed of a LODEX (`.atom`)
 - `csv`: Comma Separated Values of a lodex (`.csv`)
 - `jsonallvalue`: JSON array of all resources of a lodex (`.json`)
 - `jsonld`: [JSON-LD](https://json-ld.org/) triples of all resources of a lodex
-  (`.json`)
-- `jsonldcompacted`: Compacted JSON-LD triples of all resources of a lodex
   (`.json`)
 - `tsv`: Tabulation Separated Values of a lodex (`.tsv`)
 - `turtle`: [Turtle](https://en.wikipedia.org/wiki/Turtle_(syntax)) triples of
