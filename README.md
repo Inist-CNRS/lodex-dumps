@@ -58,4 +58,4 @@ CeCILL license.
 
 ## Version
 
-lodex-dumps:2.2.2
+lodex-dumps:2.2.3
